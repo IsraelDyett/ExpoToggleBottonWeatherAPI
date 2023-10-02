@@ -1,40 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState} from  'react'
-import { StyleSheet, Text, View, Switch } from 'react-native';
+
+import React from  'react';
+import { StyleSheet, Text, View} from 'react-native';
+import Pump from './pump';
 
 export default function App() {
-  const [isEnabled, setIsEnabled] = useState(true);
-  const [text, setText] = useState('Press The switch!');
-
-  const toggleSwitch = () => {
-    if (isEnabled){
-      setText('Inactive');
-    }else{
-      setText('Active')
-    }
-    setIsEnabled(previousState => !previousState)
-  }
 
   return (
     <View style={styles.container}>
-      <Text style={{fontWeight: 'bold', margin: 20}}>{text}</Text>
-      <Switch 
-      trackColor={{false: 'grey',true: 'tomato'}}
-      thumbColor={isEnabled? '#f4f3f4': '#f4f3f4'}
-      ios_backgroundColor={'grey'}
-      onValueChange={toggleSwitch}
-      value={isEnabled}
-      />
-      <StatusBar style="auto" />
+     <View style={{margin: 6}}><Pump pumpNum={1}/></View>
+     <View style={{margin: 6}}><Pump pumpNum={2}/></View>
     </View>
-  );
+  ); 
 }
 
 const styles = StyleSheet.create({
+
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    width:"100%",
+    height:"100%",
+    backgroundColor: 'lightgray',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+    display:'flex',
+    
+  }
 });
