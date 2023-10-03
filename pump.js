@@ -28,8 +28,9 @@ export default function Pump({pumpNum}) {
       <Text style={styles.onOFFtext}>{text} </Text>
       <MaterialCommunityIcons name="water-pump" size={25}  color="navyblue" />
       <Switch 
+      
       style={{margin:20}}
-      trackColor={{false: 'grey',true: 'tomato'}}
+      trackColor={{false: 'red',true:'green' }}
       thumbColor={isEnabled? 'green': 'red'}
       ios_backgroundColor={isEnabled? 'darkgreen': 'darkred'}
       onValueChange={toggleSwitch}
